@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spleen Volume Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; margin: 2em; max-width: 600px; }
+    input, select { padding: 6px; margin: 4px 0; width: 100%; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    .result { margin-top: 20px; font-size: 1.2em; }
+    table { margin-top: 20px; width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 6px; text-align: center; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <h2>Spleen Volume Calculator</h2>
+  <form id="calcForm">
+    <label for="length">Length (cm)</label>
+    <input type="number" id="length" step="0.1" required>
+
+    <label for="width">Width (cm)</label>
+    <input type="number" id="width" step="0.1" required>
+
+    <label for="depth">Depth (cm)</label>
+    <input type="number" id="depth" step="0.1" required>
+
+    <label for="age">Age (years)</label>
+    <input type="number" id="age" required>
+
+    <label for="sex">Sex</label>
+    <select id="sex">
+      <option value="1">Male</option>
+      <option value="0">Female</option>
+    </select>
+
+    <label for="height">Height (cm)</label>
+    <input type="number" id="height">
+
+    <label for="weight">Weight (kg)</label>
+    <input type="number" id="weight">
+
+    <label for="model">Model</label>
+    <select id="model">
+      <option value="V_full">Full Model</option>
+      <option value="V_simple">Simplified Model</option>
+    </select>
+
+    <label for="ageGroup">Age Group</label>
+    <select id="ageGroup">
+      <option value="overall">All Ages</option>
+      <option value="age_21_30">21–30</option>
+      <option value="age_31_40">31–40</option>
+      <option value="age_41_50">41–50</option>
+      <option value="age_51_60">51–60</option>
+      <option value="age_61_70">61–70</option>
+      <option value="age_71_80">71–80</option>
+    </select>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  <div class="result" id="results"></div>
+
+  <h3>Reference Splenic Volume (mL)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Age Group</th>
+        <th>Sex</th>
+        <th>Mean Volume (mL)</th>
+        <th>Standard Deviation</th>
+        <th>Minimum</th>
+        <th>Maximum</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>21–30</td><td>Female</td><td>246.66</td><td>93.07</td><td>134.21</td><td>542.00</td></tr>
+      <tr><td>21–30</td><td>Male</td><td>217.89</td><td>67.14</td><td>114.35</td><td>363.16</td></tr>
+      <tr><td>31–40</td><td>Female</td><td>183.50</td><td>91.45</td><td>54.19</td><td>561.55</td></tr>
+      <tr><td>31–40</td><td>Male</td><td>164.91</td><td>48.87</td><td>71.51</td><td>277.08</td></tr>
+      <tr><td>41–50</td><td>Female</td><td>232.61</td><td>125.07</td><td>92.41</td><td>731.22</td></tr>
+      <tr><td>41–50</td><td>Male</td><td>158.26</td><td>66.06</td><td>58.51</td><td>280.92</td></tr>
+      <tr><td>51–60</td><td>Female</td><td>175.65</td><td>69.63</td><td>65.08</td><td>344.53</td></tr>
+      <tr><td>51–60</td><td>Male</td><td>153.30</td><td>62.00</td><td>64.32</td><td>278.33</td></tr>
+      <tr><td>61–70</td><td>Female</td><td>168.15</td><td>71.64</td><td>27.55</td><td>423.46</td></tr>
+      <tr><td>61–70</td><td>Male</td><td>168.01</td><td>84.33</td><td>38.36</td><td>826.73</td></tr>
+      <tr><td>71–80</td><td>Female</td><td>164.86</td><td>71.55</td><td>35.62</td><td>397.40</td></tr>
+      <tr><td>71–80</td><td>Male</td><td>191.18</td><td>71.61</td><td>54.33</td><td>341.12</td></tr>
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
